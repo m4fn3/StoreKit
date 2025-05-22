@@ -3,14 +3,14 @@ ARCHS = arm64
 STRIP = 0
 include $(THEOS)/makefiles/common.mk
 
-LIBRARY_NAME = libswiftCoreFake libswiftCore AVFAudio AVFoundation StoreKit SwiftUI
+LIBRARY_NAME = libcpp libswiftCore AVFAudio AVFoundation StoreKit SwiftUI
 
-libswiftCoreFake_FILES = libswiftCoreFake.c
-libswiftCoreFake_LDFLAGS = -install_name /usr/lib/swift/libswiftCore.dylib
-libswiftCoreFake_INSTALL_PATH = /usr/local/lib/swift
+libcpp_FILES = libcpp.c
+libcpp_LDFLAGS = -current_version 1.0 -compatibility_version 1.0 -Xlinker -reexport_library $(SYSROOT)/usr/lib/libc++.1.tbd
+libcpp_INSTALL_PATH = /usr/local/lib
 
 libswiftCore_FILES = libswiftCore.c
-libswiftCore_LDFLAGS = -Xlinker -reexport_library $(THEOS_OBJ_DIR)/libswiftCoreFake.dylib
+libswiftCore_LDFLAGS = -Xlinker -reexport_library $(SYSROOT)/usr/lib/swift/libswiftCore.tbd
 libswiftCore_INSTALL_PATH = /usr/local/lib/swift
 
 AVFAudio_FILES = AVFAudio.m
