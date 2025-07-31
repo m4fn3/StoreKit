@@ -510,8 +510,12 @@ public enum AppDistributor {
       marketplace("io.altstore.AltStore")
     }
   }
+  public static func marketplace() async throws -> AppDistributor {
+    try await current
+  }
   case appStore
   case testFlight
   case marketplace(String)
+  case web
   case other
 }

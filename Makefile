@@ -23,7 +23,7 @@ AVFoundation_INSTALL_PATH = /usr/local/lib
 
 StoreKit_FILES = StoreKit.swift StoreKit.x
 StoreKit_CFLAGS = -fobjc-arc
-StoreKit_SWIFTFLAGS = -enable-library-evolution
+StoreKit_SWIFTFLAGS = -enable-library-evolution -module-name MarketplaceKit
 StoreKit_INSTALL_PATH = /usr/local/lib
 
 SwiftUI_FILES = SwiftUI.swift
