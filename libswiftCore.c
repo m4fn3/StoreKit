@@ -1,22 +1,31 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-uint64_t swift_getOpaqueTypeConformance(const void * const *arguments, uint64_t descriptor, unsigned index);
-uint64_t swift_getTypeByMangledNameInContext(const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs);
-uint64_t swift_getTypeByMangledNameInContextInMetadataState(uint64_t metadataState, const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs);
+void* swift_getOpaqueTypeConformance(const void * const *arguments, void* descriptor, unsigned index);
+void* swift_getTypeByMangledNameInContext(const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs);
+void* swift_getTypeByMangledNameInContextInMetadataState(uint64_t metadataState, const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs);
 
-void $sSa12_endMutationyyFyXl_Ts5() {
-    // real implementation is also empty
-}
-
-uint64_t swift_getOpaqueTypeConformance2(const void * const *arguments, uint64_t descriptor, unsigned index) {
+void* swift_getOpaqueTypeConformance2(const void * const *arguments, void* descriptor, unsigned index) {
   return swift_getOpaqueTypeConformance(arguments, descriptor, index);
 }
 
-uint64_t swift_getTypeByMangledNameInContext2(const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs) {
+void* swift_getTypeByMangledNameInContext2(const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs) {
     return swift_getTypeByMangledNameInContext(typeNameStart, typeNameLength, context, genericArgs);
 }
 
-uint64_t swift_getTypeByMangledNameInContextInMetadataState2(uint64_t metadataState, const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs) {
+void* swift_getTypeByMangledNameInContextInMetadataState2(uint64_t metadataState, const char *typeNameStart, uint64_t typeNameLength, const void *context, const void * const *genericArgs) {
     return swift_getTypeByMangledNameInContextInMetadataState(metadataState, typeNameStart, typeNameLength, context, genericArgs);
 }
+
+// swift_conformsToProtocol
+void* swift_conformsToProtocol(const void *type, const void *protocol);
+void* swift_conformsToProtocol2(const void *type, const void *protocol) {
+    return swift_conformsToProtocol(type, protocol);
+}
+
+// swift_getOpaqueTypeMetadata
+void* swift_getOpaqueTypeMetadata(void* request, const void * const *arguments, void* descriptor, unsigned index);
+void* swift_getOpaqueTypeMetadata2(void* request, const void * const *arguments, void* descriptor, unsigned index) {
+    return swift_getOpaqueTypeMetadata(request, arguments, descriptor, index);
+}
+
